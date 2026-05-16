@@ -28,3 +28,15 @@
 2026-05-11 09:40:52 ERROR Unauthorized privilege escalation attempt
 2026-05-11 09:42:20 INFO User admin logged out
 2026-05-11 09:45:10 ALERT High number of failed login attempts detected
+2026-05-12 08:20:18 WARNING Failed login attempt for user admin from 203.0.113.45
+2026-05-12 08:21:03 WARNING Failed login attempt for user admin from 203.0.113.45
+2026-05-12 08:22:31 ALERT Multiple failed login attempts detected from 203.0.113.45
+2026-05-12 08:45:33 ERROR Unauthorized access attempt to /etc/passwd from 198.51.100.23
+2026-05-12 09:00:25 WARNING Port scan detected from 45.33.32.156
+2026-05-12 09:05:42 ALERT Possible brute force attack from 203.0.113.45
+2026-05-12 09:20:49 ERROR Malware signature detected in downloaded file invoice.exe
+2026-05-12 09:25:13 WARNING Suspicious file upload detected: shell.php
+2026-05-12 09:35:51 ERROR Database login failed for user root from 185.199.108.77
+2026-05-12 09:55:09 ERROR Unauthorized API request blocked from 198.51.100.89
+2026-05-12 10:10:41 WARNING Unknown device connected from 192.168.1.88
+2026-05-12 10:15:03 ALERT High risk activity detected: possible data exfiltration
