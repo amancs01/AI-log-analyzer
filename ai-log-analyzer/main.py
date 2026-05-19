@@ -15,13 +15,41 @@ suspicious_keywords=[
     "blocked"
 
 ]
+
+total_logs = 0
+suspicious_count = 0
+
 with open(log_file_path, "r") as file:
     for line in file:
         clean_line = line.strip()
-        lower_line = clean_line.lower()
+
+        if clean_line == "":
+          continue
+
+        total_logs += 1
+        lower_line = clean_line .lower()
 
         for keyword in suspicious_keywords:
             if keyword in lower_line:
                 print("[SUSPICIOUS]", clean_line)
+                suspicious_count += 1
                 break
+
+print("\n --- Security Summary ----")
+print("Total logs scanned: ",total_logs)
+print("Suspicion events found: ", suspicious_count)
+
+if suspicious_count == 0:
+  risk_level = "low"
+
+elif suspicious_count <= 5:
+   risk_level = "medium"
+
+else:
+   risk_level = "high"
+
+print ("Risk level: ", risk_level)
+
+
+
            
