@@ -19,6 +19,15 @@ suspicious_keywords=[
 total_logs = 0
 suspicious_count = 0
 
+print()
+print()
+print ("        === AI Log Analyzer ===       ")
+print()
+print ("Scanning Log File: ", log_file_path)
+print()
+
+print("--- Suspicious Logs Found ---")
+
 with open(log_file_path, "r") as file:
     for line in file:
         clean_line = line.strip()
@@ -31,9 +40,13 @@ with open(log_file_path, "r") as file:
 
         for keyword in suspicious_keywords:
             if keyword in lower_line:
-                print("[SUSPICIOUS]", clean_line)
                 suspicious_count += 1
+                print(f"{suspicious_count}. [SUSPICIOUS], {clean_line}")
                 break
+if suspicious_count == 0:
+   print("No suspicioud logs found.") 
+
+print()
 
 print("\n --- Security Summary ----")
 print("Total logs scanned: ",total_logs)
