@@ -19,14 +19,6 @@ suspicious_keywords=[
 total_logs = 0
 suspicious_logs = []
 
-print()
-print()
-print ("        === AI Log Analyzer ===       ")
-print()
-print ("Scanning Log File: ", log_file_path)
-print()
-
-print("--- Suspicious Logs Found ---")
 
 with open(log_file_path, "r") as file:
     for line in file:
@@ -46,15 +38,6 @@ with open(log_file_path, "r") as file:
 suspicious_count = len(suspicious_logs)
 
 if suspicious_count == 0:
-   print("No suspicious logs found.") 
-
-print()
-
-print("\n --- Security Summary ----")
-print("Total logs scanned: ",total_logs)
-print("Suspicion events found: ", suspicious_count)
-
-if suspicious_count == 0:
   risk_level = "low"
 
 elif suspicious_count <= 5:
@@ -62,6 +45,27 @@ elif suspicious_count <= 5:
 
 else:
    risk_level = "high"
+
+print()
+print()
+print ("=== AI Log Analyzer ===       ")
+print()
+print ("Scanning Log File: ", log_file_path)
+print()
+
+print("--- Suspicious Logs Found ---")
+
+if suspicious_count == 0:
+   print("No suspicious logs found.") 
+else:
+  for index, suspicious_log in enumerate(suspicious_logs, start=1):
+    print(f"{index}. [SUSPICIOUS] {suspicious_log}")
+print()
+
+print("\n --- Security Summary ----")
+print("Total logs scanned: ",total_logs)
+print("Suspicion events found: ", suspicious_count)
+
 
 print ("Risk level: ", risk_level)
 
