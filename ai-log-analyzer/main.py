@@ -17,7 +17,7 @@ suspicious_keywords=[
 ]
 
 total_logs = 0
-suspicious_count = 0
+suspicious_logs = []
 
 print()
 print()
@@ -40,11 +40,13 @@ with open(log_file_path, "r") as file:
 
         for keyword in suspicious_keywords:
             if keyword in lower_line:
-                suspicious_count += 1
-                print(f"{suspicious_count}. [SUSPICIOUS], {clean_line}")
+                suspicious_logs.append(clean_line)
                 break
+
+suspicious_count = len(suspicious_logs)
+
 if suspicious_count == 0:
-   print("No suspicioud logs found.") 
+   print("No suspicious logs found.") 
 
 print()
 
