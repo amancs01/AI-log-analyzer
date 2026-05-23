@@ -10,6 +10,9 @@ AI Log Analyzer is a beginner-friendly cybersecurity project that reads log file
 - Counts total logs scanned.
 - Counts suspicious events found.
 - Calculates a basic risk level: LOW, MEDIUM, or HIGH.
+- Shows the matched suspicious keyword for each detected log
+- Assigns severity levels: LOW, MEDIUM, or HIGH
+- Counts suspicious events by severity
 
 ## Project Status
 
