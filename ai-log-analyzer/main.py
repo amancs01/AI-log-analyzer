@@ -15,29 +15,30 @@ suspicious_rules={
     "blocked": "MEDIUM"
 }
 
+def analyze_log_line(log_line):
+   lower_line = clean_line.lower()
+   for keyword,severity in suspicious_rules.items():
+      if keyword in lower_line:
+         return{
+                "log": lower_line,
+                "matched_keyword": keyword,
+                "severity": severity
+         }
+   return None
 total_logs = 0
 suspicious_logs = []
-
-
 with open(log_file_path, "r") as file:
-    for line in file:
+   for line in file:
         clean_line = line.strip()
-
+        
         if clean_line == "":
           continue
-
         total_logs += 1
-        lower_line = clean_line.lower()
 
-        for keyword,severity in suspicious_rules.items():
-            if keyword in lower_line:
-                suspicious_logs.append({
-                   "log": lower_line,
-                   "matched_keyword": keyword,
-                   "severity": severity
-                })
-                break
-
+        result = analyze_log_line(clean_line)
+        if result is not None:
+           suspicious_logs.append(result)
+        
 suspicious_count = len(suspicious_logs)
 
 high_count = 0
