@@ -40,3 +40,4 @@
 2026-05-12 09:55:09 ERROR Unauthorized API request blocked from 198.51.100.89
 2026-05-12 10:10:41 WARNING Unknown device connected from 192.168.1.88
 2026-05-12 10:15:03 ALERT High risk activity detected: possible data exfiltration
+2026-05-12 10:30:22 ALERT Root login attempt detected from 203.0.113.200
