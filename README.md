@@ -42,3 +42,6 @@ The project currently uses rule-based detection. It is not machine learning or r
 Total logs scanned: 42
 Suspicious events found: 26
 Risk level: HIGH
+
+- Uses separate functions for detection, severity counting, risk calculation, and report printing
+- Uses a main() function as the program entry point
