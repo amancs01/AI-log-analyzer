@@ -1,20 +1,7 @@
+from rules import suspicious_rules
+
 log_file_path = "sample_logs.txt"
 
-suspicious_rules={
-    "failed login": "MEDIUM",
-    "failed": "LOW",
-    "unauthorized": "HIGH",
-    "brute force": "HIGH",
-    "port scan": "HIGH",
-    "malware": "HIGH",
-    "suspicious": "MEDIUM",
-    "unknown device": "MEDIUM",
-    "data exfiltration": "HIGH",
-    "high risk": "HIGH",
-    "attack": "HIGH",
-    "blocked": "MEDIUM",
-    "root login": "HIGH"
-}
 
 def analyze_log_line(log_line):
    lower_line = log_line.lower()
